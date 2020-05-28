@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicacion de Tareas</title>
+    <!--Bootstrap 4.0-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/lux/bootstrap.min.css">
+    <!-- letra sacada de google fonts lobster-->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <!--Main css-->
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='main.css')}}">
+    <!--href="/static/main.css" tambien funcionaba bien-->
+</head>
+
+<body>
+    <main class="container p-4">
+        <!--para que todo el contenido de main este centrado y no 
+    pegado hacia los bordes. p es pading es decir espaciado interno-->
+        <!--Cuerpo principal de la aplicacion-->
+        <!--Modifica las caracteristicas del h1 creando un clase con las siguientes carcteristicas:
+        display-4 empieza en 1 y ocuparia toda la pantalla y cuando mas grande el numero mas pequeño
+            el resultado.
+        text-center que centra el texto en el medio de la pantalla
+        mt-4 le mete un margen superior-->
+        <h1 class="display-4 text-center mt-4 title">Aplicación de Tareas</h1><br>
+
+        <!--Vamos a crear un formulario pero para que quede bien crearemos una tarjeta pero todo
+        son clases de boostrap-->
+        <div class="row">
+            <!--fila de bootstrap-->
+            <div class="col-md-4 offset-md-4 my-auto">
+                <div class="card">
+                    <div class="card-header">
+                        <form action="">
+                            <div class="form-group">
+                                <input type="text" placeholder="Tarea" class="form-control" autofocus>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Guardar Tarea</button>
+                        </form>
+
+                    </div>
+                    <div class="card-body">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+</body>
+
+</html>
