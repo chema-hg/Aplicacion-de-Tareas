@@ -33,16 +33,33 @@
             <div class="col-md-4 offset-md-4 my-auto">
                 <div class="card">
                     <div class="card-header">
-                        <form action="">
+                        <!--Cada vez que envie el formulario lo mande a la vista crear_tarea-->
+                        <form action="/crear_tarea/" method='POST'>
                             <div class="form-group">
-                                <input type="text" placeholder="Tarea" class="form-control" autofocus>
+                                <input type="text" name="contenido" placeholder="Tarea" class="form-control" autofocus>
                             </div>
                             <button type="submit" class="btn btn-primary btn-block">Guardar Tarea</button>
                         </form>
 
                     </div>
                     <div class="card-body">
-
+                        <!--Aqui van a ir los registros de la base de datos-->
+                        <ul class='list-group'>
+                            {% for task in tasks %}
+                            <!--por cada tarea en la lista va a pintar un li al que hemos añadido una clase de bootstrap
+                            para estilizarlo-->
+                            <li class='list-group-item'>
+                                <!--Si la propiedad done es True colocale la clase done definida en main.css-->
+                                <spam class="{% if task.done %}done{% endif %}">{{task.content}}</spam>
+                                <!--Vamos a poner una clase para ver botones y no simplemente los enlaces-->
+                                <p>
+                                <a class="btn btn-success btn-sm" href="/done/{{task.id}}">Hecho</a>
+                                <!--si pulsamos nos va a enviar a la ruta borrar con el id de la tarea-->
+                                <a class="btn btn-danger btn-sm" href="/borrar_tarea/{{task.id}}">Borrar</a>
+                                </p>
+                            </li>
+                            {% endfor %}
+                        </ul>
                     </div>
                 </div>
             </div>
